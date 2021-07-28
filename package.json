@@ -1,0 +1,41 @@
+{
+  "name": "simple-chat-app",
+  "version": "0.1.0",
+  "description": "Simple chat app with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node .",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mxsgx/simple-chat-app.git"
+  },
+  "author": "Masga Satria Wirawan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mxsgx/simple-chat-app/issues"
+  },
+  "homepage": "https://github.com/mxsgx/simple-chat-app#readme",
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "ejs": "^3.1.6",
+    "env-schema": "^3.1.0",
+    "fastify": "^3.19.2",
+    "fastify-static": "^4.2.2",
+    "point-of-view": "^4.15.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2"
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "printWidth": 80,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  }
+}
