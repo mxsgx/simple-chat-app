@@ -17,6 +17,7 @@ module.exports = function (fastify) {
       coerceTypes: true,
       removeAdditional: true,
       useDefaults: 'empty',
+      keywords: [envSchema.keywords.separator],
     }),
   };
 
