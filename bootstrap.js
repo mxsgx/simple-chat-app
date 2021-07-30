@@ -20,5 +20,5 @@ module.exports = function (fastify) {
     viewExt: path.join('ejs'),
   });
 
-  require('./routes')(fastify);
+  require('./routes/http')(fastify);
 };
