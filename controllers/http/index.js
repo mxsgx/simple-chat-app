@@ -1,5 +1,5 @@
 module.exports = {
-  index: (req, res) => {
+  index: function (req, res) {
     res.view('index', {
       fastify: this,
     });

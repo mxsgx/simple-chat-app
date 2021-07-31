@@ -1,3 +1,5 @@
-module.exports = (socket, fastify) => ({
-  chat: require('./chat')(socket, fastify),
-});
+module.exports = function (socket, fastify) {
+  return {
+    chat: require('./chat')(socket, fastify),
+  };
+};

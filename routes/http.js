@@ -1,5 +1,5 @@
 const { index } = require('../controllers/http');
 
-module.exports = (fastify) => {
+module.exports = function (fastify) {
   fastify.get('/*', {}, index);
 };

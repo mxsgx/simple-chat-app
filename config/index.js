@@ -3,7 +3,7 @@ const path = require('path');
 const envSchema = require('env-schema');
 const Ajv = require('ajv');
 
-module.exports = (fastify) => {
+module.exports = function (fastify) {
   let options = {
     dotenv: true,
     schema: {

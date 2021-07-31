@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = (fastify) => {
+module.exports = function (fastify) {
   require('./config')(fastify);
 
   fastify.register(require('fastify-cors'), {
@@ -25,7 +25,7 @@ module.exports = (fastify) => {
       cors: fastify.config.CORS_ORIGIN_SOCKET,
     })
     .ready(() => {
-      fastify.io.on('connection', (socket) => {
+      fastify.io.on('connection', function (socket) {
         require('./routes/ws')(socket, fastify);
       });
     });
