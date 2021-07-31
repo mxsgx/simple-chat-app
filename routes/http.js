@@ -1,5 +1,5 @@
 const { index } = require('../handlers/http');
 
-module.exports = function (fastify) {
+module.exports = (fastify) => {
   fastify.get('/*', {}, index);
 };

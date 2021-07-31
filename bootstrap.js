@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = function (fastify) {
+module.exports = (fastify) => {
   require('./config')(fastify);
 
   fastify.register(require('fastify-cors'), {
