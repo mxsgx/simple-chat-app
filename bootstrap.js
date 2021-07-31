@@ -20,5 +20,15 @@ module.exports = function (fastify) {
     viewExt: path.join('ejs'),
   });
 
+  fastify
+    .register(require('fastify-socket.io'), {
+      cors: fastify.config.CORS_ORIGIN_SOCKET,
+    })
+    .ready(() => {
+      fastify.io.on('connection', (socket) => {
+        require('./routes/ws')(socket, fastify);
+      });
+    });
+
   require('./routes/http')(fastify);
 };
