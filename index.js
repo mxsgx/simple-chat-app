@@ -8,7 +8,9 @@ fastify.listen(fastify.config.APP_PORT, '0.0.0.0', function (err) {
     process.exit(1);
   }
 
+  const { address, port } = fastify.server.address();
+
   console.info(
-    `Your "${fastify.config.APP_NAME}" application running at http://localhost:${fastify.config.APP_PORT}`
+    `Server running at http://${address}:${port}`
   );
 });
