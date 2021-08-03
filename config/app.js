@@ -5,6 +5,6 @@ module.exports = {
   },
   APP_PORT: {
     type: 'number',
-    default: 3000,
+    default: process.env.PORT || 3000,
   },
 };
