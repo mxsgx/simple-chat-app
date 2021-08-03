@@ -29,13 +29,13 @@ npm install
 Configure `.env` file if necessary. Then compile assets
 
 ```bash
-npm run build:production
+npm run build
 ```
 
 Run server
 
 ```bash
-npm run server:start
+npm run start
 ```
 
 Now application running at http://localhost:3000
