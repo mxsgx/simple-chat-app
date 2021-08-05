@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import SocketIOContext from '../providers/SocketIO';
 
 function ChatBoxMessage({ data }) {
+  const socket = useContext(SocketIOContext);
+
   return (
-    <div style={{ margin: '.5rem 0', fontFamily: 'sans-serif' }}>
-      <div>
-        <b>
-          {data.name} (ID: {data.id})
-        </b>
-      </div>
-      <div>{data.text}</div>
-      <div>
-        <i>at {new Date(data.timestamp).toLocaleTimeString()}</i>
+    <div
+      className={[
+        'flex',
+        data.id === socket.id ? 'flex-row-reverse' : 'flex-row',
+      ].join(' ')}
+    >
+      <div
+        className={[
+          data.id === socket.id ? 'bg-blue-500' : 'bg-gray-300',
+          data.id === socket.id ? 'text-white' : 'text-black',
+          'p-4',
+          'rounded-lg',
+        ].join(' ')}
+      >
+        <b className={'block'}>{data.name}</b>
+        <div className={'whitespace-pre-line'}>{data.text}</div>
       </div>
     </div>
   );

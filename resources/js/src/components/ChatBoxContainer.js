@@ -24,14 +24,7 @@ function ChatBoxContainer() {
 
   return (
     <div
-      style={{
-        borderWidth: '2px',
-        borderStyle: 'dashed',
-        borderColor: 'black',
-        width: '420px',
-        padding: '.5rem',
-        margin: '0 auto',
-      }}
+      className={'bg-gray-50 p-4 rounded-lg shadow-md max-w-lg outline-none w-full mx-auto my-4'}
     >
       <ChatBoxContent messages={messages} />
       <ChatBoxInput onSend={onSend} />

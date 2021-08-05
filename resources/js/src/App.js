@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { io } from 'socket.io-client';
 import ChatBoxContainer from './components/ChatBoxContainer';
 import SocketIOContext from './providers/SocketIO';
+import '../../css/tailwind.css';
 
 function App() {
   return (

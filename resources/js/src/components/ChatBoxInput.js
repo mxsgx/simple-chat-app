@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import TextareaAutosize from 'react-textarea-autosize';
+import { IconSend } from '@tabler/icons';
 
 function ChatBoxInput({ onSend }) {
+  const submitButton = useRef(null);
   const [text, setText] = useState('');
 
   const onSubmit = function (event) {
@@ -23,30 +26,31 @@ function ChatBoxInput({ onSend }) {
     setText(event.target.value);
   };
 
+  const onKeyPress = function (event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      submitButton.current.click();
+    }
+  };
+
   return (
-    <form
-      onSubmit={onSubmit}
-      style={{
-        borderTopWidth: '2px',
-        borderTopStyle: 'dashed',
-        borderTopColor: 'black',
-        paddingTop: '.5rem',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-      }}
-    >
-      <input
-        type="text"
+    <form onSubmit={onSubmit} className={'flex flex-row space-x-4 mt-4'}>
+      <TextareaAutosize
         placeholder="Type a message"
         value={text}
+        onKeyPress={onKeyPress}
         onChange={onChange}
-        style={{
-          width: '80%',
-          padding: '.25rem',
-        }}
+        className={
+          'h-4 border-2 resize-none border-gray-300 rounded py-1 px-2 w-full self-center'
+        }
       />
-      <button type="submit">Send</button>
+      <button
+        type="submit"
+        ref={submitButton}
+        className={'rounded-full p-3 bg-blue-500 text-white self-end'}
+      >
+        <IconSend size={20} stroke={2} color={'white'} />
+      </button>
     </form>
   );
 }

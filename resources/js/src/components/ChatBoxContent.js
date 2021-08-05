@@ -25,20 +25,12 @@ function ChatBoxContent({ messages }) {
   return (
     <div
       style={{
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '.5rem 1rem',
-        border: '2px dashed black',
-        marginBottom: '-2px',
+        maxHeight: '420px',
       }}
+      className={'overflow-y-auto p-2'}
+      ref={container}
     >
-      <div
-        style={{
-          maxHeight: '420px',
-          overflowY: 'auto',
-        }}
-        ref={container}
-      >
+      <div className={'flex flex-col space-y-4'}>
         {messages.length ? (
           messages.map((message, index) => (
             <ChatBoxMessage data={message} key={index} />

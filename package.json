@@ -33,11 +33,16 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
+    "@tabler/icons": "^1.41.2",
+    "autoprefixer": "^10.3.1",
     "laravel-mix": "^6.0.27",
     "nodemon": "^2.0.12",
+    "postcss": "^8.3.6",
     "prettier": "^2.3.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-textarea-autosize": "^8.3.3",
+    "tailwindcss": "^2.2.7"
   },
   "prettier": {
     "bracketSpacing": true,
