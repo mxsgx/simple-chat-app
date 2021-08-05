@@ -31,4 +31,5 @@ module.exports = function (fastify) {
     });
 
   require('./routes/http')(fastify);
+  require('./plugins/mix')(fastify);
 };
