@@ -4,7 +4,7 @@ Simple chat app with Node.js. Using Fastify as web framework, Socket.IO for real
 
 ## Requirements
 
-- Node.JS LTS or latest
+- Node.js LTS or latest
 
 ## Installation
 
